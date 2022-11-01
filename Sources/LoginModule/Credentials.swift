@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 public class Credentials:UIViewController{
+    //MARK: Properties
+    let username = "Admin"
+    let password = "1234"
     
     
     //MARK: UIProperties
@@ -40,7 +43,7 @@ public class Credentials:UIViewController{
     lazy var btnLogin: UIButton = {
         let btn = UIButton()
         btn.setTitle("Iniciar sesión", for: .normal)
-        btn.setTitleColor(.link, for: .normal)
+        btn.setTitleColor(.white, for: .normal)
         return btn
     }()
     
@@ -106,7 +109,18 @@ public class Credentials:UIViewController{
     
     
     //MARK: Actions
-    
+    @objc func login(){
+        guard let user = tfUserName.text,
+              let pass = tfPassword.text else { return  }
+        
+        if user == username && pass == password {
+            print("Login success")
+        }  else{
+            print("Login failed")
+        }
+        
+        
+    }
     
     
     
