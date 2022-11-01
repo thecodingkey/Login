@@ -114,7 +114,9 @@ public class Credentials:UIViewController{
               let pass = tfPassword.text else { return  }
         
         if user == username && pass == password {
-            print("Login success")
+            DispatchQueue.main.async { [weak self] in
+                self?.view.backgroundColor = .green
+            }
         }  else{
             print("Login failed")
         }
