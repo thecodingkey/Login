@@ -103,7 +103,7 @@ public class Credentials:UIViewController{
         btnLogin.widthAnchor.constraint(equalToConstant: 232).isActive = true
         btnLogin.heightAnchor.constraint(equalToConstant: 48).isActive = true
         
-        
+        btnLogin.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
     
     
